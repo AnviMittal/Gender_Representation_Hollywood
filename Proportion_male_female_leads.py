@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import json
 import time
 
-# Replace 'your_api_key' with the actual API key you obtained from OMDb
 api_key = 'eb75de5e'
 
 # Function to fetch movie details by title
@@ -31,7 +30,7 @@ def fetch_movies(api_key, search_term, max_pages = 1):
                 all_results.extend(data['Search'])
                 print(f"Fetched page {page} for search term '{search_term}'.")
             else:
-                break  # No more results
+                break  
         else:
             print(f"Failed to fetch data. Status code: {response.status_code}")
             break
@@ -85,7 +84,7 @@ detector = gender.Detector()
 
 # Predict the gender of lead characters
 def predict_gender(name):
-    first_name = name.split()[0]  # Get the first name
+    first_name = name.split()[0] 
     gender = detector.get_gender(first_name)
     if gender in ['female', 'mostly_female']:
         return 'female'
@@ -120,13 +119,12 @@ colors = ['#4c72b0', '#dd8452']
 plt.figure(figsize=(8, 8))
 wedges, texts, autotexts = plt.pie(proportions, labels=labels, autopct='%1.1f%%', startangle=140, colors=colors)
 
-# Customize the labels and percentages
 for i, text in enumerate(texts):
     x, y = text.get_position()
     if labels[i] == 'male':
-        text.set_position((x - 0.15, y + 0.3))  # Adjust the position for 'Male'
+        text.set_position((x - 0.15, y + 0.3))  
     if labels[i] == 'female':
-        text.set_position((x + 0.2, y - 0.3))  # Adjust the position for 'Female'
+        text.set_position((x + 0.2, y - 0.3))  
     text.set_fontsize(14)
     text.set_fontweight('bold')
 
@@ -136,6 +134,6 @@ for autotext in autotexts:
     autotext.set_color('white')
 
 plt.title('Proportion of Female vs Male Leads in Movies', fontsize=16)
-plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.axis('equal')  
 plt.show()
 

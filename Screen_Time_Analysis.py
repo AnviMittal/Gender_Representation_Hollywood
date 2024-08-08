@@ -17,6 +17,7 @@ def count_lines(file_path):
         return count 
 
 api_keys = ['eb75de5e', 'a086b949', 'fe9e1032', '2a844301']
+
 # Function to fetch movie details by title
 def fetch_movie_details(title):
     i = 0 
@@ -93,7 +94,6 @@ def main():
     
     print(ratios)
 
-    # Remove 'Film-Noir' and 'N/A' genres
     if 'Film-Noir' in ratios:
         del ratios['Film-Noir']
     if 'N/A' in ratios:

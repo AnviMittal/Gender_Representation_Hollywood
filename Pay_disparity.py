@@ -5,7 +5,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import time
 
-# Replace 'your_api_key' with the actual API key you obtained from OMDb
 api_key = 'eb75de5e'
 
 # Function to fetch movie details by title
@@ -30,7 +29,7 @@ def fetch_movies(api_key, search_term, max_pages=10):
                 all_results.extend(data['Search'])
                 print(f"Fetched page {page} for search term '{search_term}'.")
             else:
-                break  # No more results
+                break  
         else:
             print(f"Failed to fetch data. Status code: {response.status_code}")
             break
@@ -120,8 +119,6 @@ average_earnings_by_gender = df_combined.groupby('LeadGender')['Pay (USD million
 
 # Print the average earnings
 print(average_earnings_by_gender)
-
-# Visualization
 
 # Bar plot for average earnings by gender
 sns.barplot(x=average_earnings_by_gender.index, y=average_earnings_by_gender.values)

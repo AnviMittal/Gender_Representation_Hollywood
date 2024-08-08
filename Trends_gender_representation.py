@@ -28,7 +28,7 @@ def fetch_movies(api_key, search_term, max_pages=5):
                 all_results.extend(data['Search'])
                 print(f"Fetched page {page} for search term '{search_term}'.")
             else:
-                break  # No more results
+                break  
         else:
             print(f"Failed to fetch data. Status code: {response.status_code}")
             break
