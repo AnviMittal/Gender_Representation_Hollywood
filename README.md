@@ -1,2 +1,2 @@
-**Analyzing Gender Representation in Movies**</br>
+### **Analyzing Gender Representation in Movies**</br>
 *Statistical analysis with Python*
